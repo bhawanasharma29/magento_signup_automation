@@ -83,6 +83,11 @@ public class SignUpPage {
         // You can add assertion logic here, maybe check title or some dashboard element
         System.out.println("Account created successfully. Dashboard loaded.");
     }
+    
+    public boolean isLastNameFieldVisible() {
+        return lastNameInput.isDisplayed();  
+    }
+
 
     public void closeAdIfPresent() {
         try {
@@ -113,7 +118,7 @@ public class SignUpPage {
                 System.out.println("Ad closed.");
             }
 
-            // Important: switch back to default content
+            // Switch back to default content
             Hooks.getDriver().switchTo().defaultContent();
         } catch (Exception e) {
             System.out.println("No ad present or ad close failed. Skipping ad handling.");
